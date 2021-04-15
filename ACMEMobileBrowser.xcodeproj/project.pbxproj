@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D476DD072621E2BF00600DD4 /* ACMEMobileBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD062621E2BF00600DD4 /* ACMEMobileBrowserApp.swift */; };
+		D476DD092621E2BF00600DD4 /* MobileWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD082621E2BF00600DD4 /* MobileWebView.swift */; };
+		D476DD0B2621E2C200600DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D476DD0A2621E2C200600DD4 /* Assets.xcassets */; };
+		D476DD0E2621E2C200600DD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D476DD0D2621E2C200600DD4 /* Preview Assets.xcassets */; };
+		D476DD192621E2C200600DD4 /* ACMEMobileBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD182621E2C200600DD4 /* ACMEMobileBrowserTests.swift */; };
+		D476DD242621E2C200600DD4 /* ACMEMobileBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD232621E2C200600DD4 /* ACMEMobileBrowserUITests.swift */; };
+		D476DD3A2622AE6800600DD4 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD392622AE6800600DD4 /* AppTabView.swift */; };
+		D476DD452622F0B300600DD4 /* MobileWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD442622F0B300600DD4 /* MobileWebViewModel.swift */; };
+		D476DD5926230B5100600DD4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD5826230B5100600DD4 /* WebView.swift */; };
+		D476DD6426242BFB00600DD4 /* EmbeddedWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD6326242BFB00600DD4 /* EmbeddedWebViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D476DD152621E2C200600DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D476DCFB2621E2BE00600DD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D476DD022621E2BF00600DD4;
+			remoteInfo = ACMEMobileBrowser;
+		};
+		D476DD202621E2C200600DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D476DCFB2621E2BE00600DD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D476DD022621E2BF00600DD4;
+			remoteInfo = ACMEMobileBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D476DD032621E2BF00600DD4 /* ACMEMobileBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACMEMobileBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D476DD062621E2BF00600DD4 /* ACMEMobileBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACMEMobileBrowserApp.swift; sourceTree = "<group>"; };
+		D476DD082621E2BF00600DD4 /* MobileWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileWebView.swift; sourceTree = "<group>"; };
+		D476DD0A2621E2C200600DD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D476DD0D2621E2C200600DD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D476DD0F2621E2C200600DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D476DD142621E2C200600DD4 /* ACMEMobileBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACMEMobileBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D476DD182621E2C200600DD4 /* ACMEMobileBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACMEMobileBrowserTests.swift; sourceTree = "<group>"; };
+		D476DD1A2621E2C200600DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D476DD1F2621E2C200600DD4 /* ACMEMobileBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACMEMobileBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D476DD232621E2C200600DD4 /* ACMEMobileBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACMEMobileBrowserUITests.swift; sourceTree = "<group>"; };
+		D476DD252621E2C200600DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D476DD392622AE6800600DD4 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		D476DD442622F0B300600DD4 /* MobileWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileWebViewModel.swift; sourceTree = "<group>"; };
+		D476DD5826230B5100600DD4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		D476DD6326242BFB00600DD4 /* EmbeddedWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedWebViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D476DD002621E2BF00600DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D476DD112621E2C200600DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D476DD1C2621E2C200600DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D476DCFA2621E2BE00600DD4 = {
+			isa = PBXGroup;
+			children = (
+				D476DD052621E2BF00600DD4 /* ACMEMobileBrowser */,
+				D476DD172621E2C200600DD4 /* ACMEMobileBrowserTests */,
+				D476DD222621E2C200600DD4 /* ACMEMobileBrowserUITests */,
+				D476DD042621E2BF00600DD4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D476DD042621E2BF00600DD4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D476DD032621E2BF00600DD4 /* ACMEMobileBrowser.app */,
+				D476DD142621E2C200600DD4 /* ACMEMobileBrowserTests.xctest */,
+				D476DD1F2621E2C200600DD4 /* ACMEMobileBrowserUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D476DD052621E2BF00600DD4 /* ACMEMobileBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				D476DD372621E38B00600DD4 /* View */,
+				D476DD382621E39C00600DD4 /* ViewModel */,
+				D476DD062621E2BF00600DD4 /* ACMEMobileBrowserApp.swift */,
+				D476DD0A2621E2C200600DD4 /* Assets.xcassets */,
+				D476DD0F2621E2C200600DD4 /* Info.plist */,
+				D476DD0C2621E2C200600DD4 /* Preview Content */,
+			);
+			path = ACMEMobileBrowser;
+			sourceTree = "<group>";
+		};
+		D476DD0C2621E2C200600DD4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D476DD0D2621E2C200600DD4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D476DD172621E2C200600DD4 /* ACMEMobileBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				D476DD182621E2C200600DD4 /* ACMEMobileBrowserTests.swift */,
+				D476DD1A2621E2C200600DD4 /* Info.plist */,
+			);
+			path = ACMEMobileBrowserTests;
+			sourceTree = "<group>";
+		};
+		D476DD222621E2C200600DD4 /* ACMEMobileBrowserUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D476DD232621E2C200600DD4 /* ACMEMobileBrowserUITests.swift */,
+				D476DD252621E2C200600DD4 /* Info.plist */,
+			);
+			path = ACMEMobileBrowserUITests;
+			sourceTree = "<group>";
+		};
+		D476DD372621E38B00600DD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D476DD392622AE6800600DD4 /* AppTabView.swift */,
+				D476DD082621E2BF00600DD4 /* MobileWebView.swift */,
+				D476DD5826230B5100600DD4 /* WebView.swift */,
+				D476DD6326242BFB00600DD4 /* EmbeddedWebViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D476DD382621E39C00600DD4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D476DD442622F0B300600DD4 /* MobileWebViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D476DD022621E2BF00600DD4 /* ACMEMobileBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D476DD282621E2C200600DD4 /* Build configuration list for PBXNativeTarget "ACMEMobileBrowser" */;
+			buildPhases = (
+				D476DCFF2621E2BF00600DD4 /* Sources */,
+				D476DD002621E2BF00600DD4 /* Frameworks */,
+				D476DD012621E2BF00600DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACMEMobileBrowser;
+			productName = ACMEMobileBrowser;
+			productReference = D476DD032621E2BF00600DD4 /* ACMEMobileBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D476DD132621E2C200600DD4 /* ACMEMobileBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D476DD2B2621E2C200600DD4 /* Build configuration list for PBXNativeTarget "ACMEMobileBrowserTests" */;
+			buildPhases = (
+				D476DD102621E2C200600DD4 /* Sources */,
+				D476DD112621E2C200600DD4 /* Frameworks */,
+				D476DD122621E2C200600DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D476DD162621E2C200600DD4 /* PBXTargetDependency */,
+			);
+			name = ACMEMobileBrowserTests;
+			productName = ACMEMobileBrowserTests;
+			productReference = D476DD142621E2C200600DD4 /* ACMEMobileBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D476DD1E2621E2C200600DD4 /* ACMEMobileBrowserUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D476DD2E2621E2C200600DD4 /* Build configuration list for PBXNativeTarget "ACMEMobileBrowserUITests" */;
+			buildPhases = (
+				D476DD1B2621E2C200600DD4 /* Sources */,
+				D476DD1C2621E2C200600DD4 /* Frameworks */,
+				D476DD1D2621E2C200600DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D476DD212621E2C200600DD4 /* PBXTargetDependency */,
+			);
+			name = ACMEMobileBrowserUITests;
+			productName = ACMEMobileBrowserUITests;
+			productReference = D476DD1F2621E2C200600DD4 /* ACMEMobileBrowserUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D476DCFB2621E2BE00600DD4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D476DD022621E2BF00600DD4 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					D476DD132621E2C200600DD4 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = D476DD022621E2BF00600DD4;
+					};
+					D476DD1E2621E2C200600DD4 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = D476DD022621E2BF00600DD4;
+					};
+				};
+			};
+			buildConfigurationList = D476DCFE2621E2BE00600DD4 /* Build configuration list for PBXProject "ACMEMobileBrowser" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D476DCFA2621E2BE00600DD4;
+			productRefGroup = D476DD042621E2BF00600DD4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D476DD022621E2BF00600DD4 /* ACMEMobileBrowser */,
+				D476DD132621E2C200600DD4 /* ACMEMobileBrowserTests */,
+				D476DD1E2621E2C200600DD4 /* ACMEMobileBrowserUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D476DD012621E2BF00600DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D476DD0E2621E2C200600DD4 /* Preview Assets.xcassets in Resources */,
+				D476DD0B2621E2C200600DD4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D476DD122621E2C200600DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D476DD1D2621E2C200600DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D476DCFF2621E2BF00600DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D476DD3A2622AE6800600DD4 /* AppTabView.swift in Sources */,
+				D476DD6426242BFB00600DD4 /* EmbeddedWebViewController.swift in Sources */,
+				D476DD5926230B5100600DD4 /* WebView.swift in Sources */,
+				D476DD452622F0B300600DD4 /* MobileWebViewModel.swift in Sources */,
+				D476DD092621E2BF00600DD4 /* MobileWebView.swift in Sources */,
+				D476DD072621E2BF00600DD4 /* ACMEMobileBrowserApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D476DD102621E2C200600DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D476DD192621E2C200600DD4 /* ACMEMobileBrowserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D476DD1B2621E2C200600DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D476DD242621E2C200600DD4 /* ACMEMobileBrowserUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D476DD162621E2C200600DD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D476DD022621E2BF00600DD4 /* ACMEMobileBrowser */;
+			targetProxy = D476DD152621E2C200600DD4 /* PBXContainerItemProxy */;
+		};
+		D476DD212621E2C200600DD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D476DD022621E2BF00600DD4 /* ACMEMobileBrowser */;
+			targetProxy = D476DD202621E2C200600DD4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D476DD262621E2C200600DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D476DD272621E2C200600DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D476DD292621E2C200600DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ACMEMobileBrowser/Preview Content\"";
+				DEVELOPMENT_TEAM = 9CXC697Y8U;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ACMEMobileBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bump.net.ACMEMobileBrowser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D476DD2A2621E2C200600DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ACMEMobileBrowser/Preview Content\"";
+				DEVELOPMENT_TEAM = 9CXC697Y8U;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ACMEMobileBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bump.net.ACMEMobileBrowser;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D476DD2C2621E2C200600DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CXC697Y8U;
+				INFOPLIST_FILE = ACMEMobileBrowserTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bump.net.ACMEMobileBrowserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACMEMobileBrowser.app/ACMEMobileBrowser";
+			};
+			name = Debug;
+		};
+		D476DD2D2621E2C200600DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CXC697Y8U;
+				INFOPLIST_FILE = ACMEMobileBrowserTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bump.net.ACMEMobileBrowserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACMEMobileBrowser.app/ACMEMobileBrowser";
+			};
+			name = Release;
+		};
+		D476DD2F2621E2C200600DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CXC697Y8U;
+				INFOPLIST_FILE = ACMEMobileBrowserUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bump.net.ACMEMobileBrowserUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ACMEMobileBrowser;
+			};
+			name = Debug;
+		};
+		D476DD302621E2C200600DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9CXC697Y8U;
+				INFOPLIST_FILE = ACMEMobileBrowserUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bump.net.ACMEMobileBrowserUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ACMEMobileBrowser;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D476DCFE2621E2BE00600DD4 /* Build configuration list for PBXProject "ACMEMobileBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D476DD262621E2C200600DD4 /* Debug */,
+				D476DD272621E2C200600DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D476DD282621E2C200600DD4 /* Build configuration list for PBXNativeTarget "ACMEMobileBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D476DD292621E2C200600DD4 /* Debug */,
+				D476DD2A2621E2C200600DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D476DD2B2621E2C200600DD4 /* Build configuration list for PBXNativeTarget "ACMEMobileBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D476DD2C2621E2C200600DD4 /* Debug */,
+				D476DD2D2621E2C200600DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D476DD2E2621E2C200600DD4 /* Build configuration list for PBXNativeTarget "ACMEMobileBrowserUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D476DD2F2621E2C200600DD4 /* Debug */,
+				D476DD302621E2C200600DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D476DCFB2621E2BE00600DD4 /* Project object */;
+}
