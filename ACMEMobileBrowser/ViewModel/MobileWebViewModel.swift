@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 class MobileWebViewModel : ObservableObject {
-    @Published var urls = ["","",""]
+    @Published var urls = ["","","",""]
     @Published var bookmarks : [String] = [String]()
     @Published var updateFlag = false
-    @Published var history : [String : Data] = [String : Data]()
+    @Published var history = [History]()
     
     func hasBookmark(index: Int) -> Bool {
         guard let bookmarks = UserDefaults.standard.array(forKey: "bookmarks") else {   return false }
@@ -43,7 +43,34 @@ class MobileWebViewModel : ObservableObject {
         }
     }
     func updateHistory(index: Int, shot: UIImage) {
+        print("updateHistory 1")
         let url = self.urls[index]
-        self.history[url] = shot.pngData() //shot.jpegData(compressionQuality: 1)
+        var index : Int?
+        var i = 0
+        for hist in self.history {
+            if hist.url == url {
+                index = i
+                break
+            }
+            i += 1
+        }
+        if let ind = index {
+            print("updateHistory index \(shot)")
+            let hist = self.history[ind]
+            self.history.remove(at: ind)
+            self.history.insert(hist, at: 0)
+        }
+        else {
+            print("updateHistory else \(shot)")
+
+            let hist = History(url: url, shot: shot)
+            self.history.insert(hist, at: 0)
+        }
+        print("updateHistory 2 \(self.history.count)")
     }
+}
+
+struct History : Hashable {
+    let url : String
+    let shot : UIImage
 }

@@ -23,7 +23,6 @@ struct WebView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: EmbeddedWebviewController, context: Context) {
-        print("updateUIViewController updateId: \(updateId)")
         
         switch(updateId) {
         case 1:
@@ -65,8 +64,12 @@ struct WebView: UIViewControllerRepresentable {
             parent.isBack = webView.canGoBack
             parent.isForward = webView.canGoForward
             parent.didFinishLoad = true
-            
+
+            if parent.pindex == 3 {
+                return
+            }
             if let sshot = webView.takeScreenShot() {
+                print("Coordinator didFinish \(sshot)")
                 parent.viewModel.updateHistory(index: parent.pindex, shot: sshot)
             }
         }
@@ -105,6 +108,8 @@ struct WebView_Previews: PreviewProvider {
 
 extension WKWebView {
     public func takeScreenShot() -> UIImage? {
+        
+        print("takeScreenShot 1")
         let width = CGFloat(UIScreen.main.bounds.size.width)
         
         let height = CGFloat(UIScreen.main.bounds.size.height/1.3)
@@ -115,6 +120,8 @@ extension WKWebView {
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
         let screenShotImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        print("takeScreenShot 2")
+
         return screenShotImage
     }
 }

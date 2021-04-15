@@ -65,10 +65,17 @@ struct MobileWebView : View {
                         .aspectRatio(0.5, contentMode: .fit)
                         .foregroundColor(Color.pink)
                 }
+                else if pindex == 3 {
+                    Image(systemName: "list.bullet")
+                    .resizable()
+                    .frame(width:20)
+                        .aspectRatio(0.5, contentMode: .fit)
+                        .foregroundColor(Color.pink)
+                }
             }
         )
         .onAppear() {
-            if self.pindex == 2 {
+            if self.pindex == 2 || self.pindex == 3 {
                 print("onAppear: \(bmurl)")
                 self.updateId = 4
                 viewModel.urls[pindex] = bmurl
