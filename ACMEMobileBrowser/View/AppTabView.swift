@@ -9,15 +9,15 @@ import SwiftUI
 
 struct AppTabView: View {
     @ObservedObject var viewModel = MobileWebViewModel()
-    @State var currentView = 0
+    @State var currentView = ConstantsTable.First
     var body: some View {
         TabView {
-            MobileWebView(viewModel: viewModel, index: 0)
+            MobileWebView(viewModel: viewModel, index: ConstantsTable.First)
             .tabItem {
                 Image(systemName: "network")
                 Text("First")
             }
-            MobileWebView(viewModel: viewModel, index: 1)
+            MobileWebView(viewModel: viewModel, index: ConstantsTable.Second)
             .tabItem {
                 Image(systemName: "network")
                 Text("Second")
@@ -25,7 +25,7 @@ struct AppTabView: View {
             BookmarkView(viewModel: viewModel)
             .tabItem {
                 Image(systemName: "bookmark")
-                Text("Bookmark")
+                Text("Bookmarks")
             }
             ThumbnailsView(viewModel: viewModel)
             .tabItem {

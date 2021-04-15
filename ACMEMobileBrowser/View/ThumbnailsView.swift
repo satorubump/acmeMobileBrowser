@@ -21,7 +21,7 @@ struct ThumbnailsView: View {
                 ForEach(self.viewModel.history, id: \.self) { hist in
                     
                     HStack {
-                        NavigationLink(destination: MobileWebView(viewModel: viewModel, index: 3, bm: hist.url)) {
+                        NavigationLink(destination: MobileWebView(viewModel: viewModel, index: ConstantsTable.Thumbnails, bm: hist.url)) {
                             Image(uiImage: hist.shot)
                                 .resizable()
                                 .frame(height: 80)

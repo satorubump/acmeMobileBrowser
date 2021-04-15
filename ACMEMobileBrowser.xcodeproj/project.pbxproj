@@ -18,6 +18,7 @@
 		D476DD5926230B5100600DD4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD5826230B5100600DD4 /* WebView.swift */; };
 		D476DD6426242BFB00600DD4 /* EmbeddedWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD6326242BFB00600DD4 /* EmbeddedWebViewController.swift */; };
 		D47B8441262874CA00812342 /* ThumbnailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B8440262874CA00812342 /* ThumbnailsView.swift */; };
+		D47B844A2628EBCF00812342 /* ConstantsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B84492628EBCF00812342 /* ConstantsTable.swift */; };
 		D49F84222627E46700C845A8 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49F84212627E46700C845A8 /* BookmarkView.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		D476DD5826230B5100600DD4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D476DD6326242BFB00600DD4 /* EmbeddedWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedWebViewController.swift; sourceTree = "<group>"; };
 		D47B8440262874CA00812342 /* ThumbnailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailsView.swift; sourceTree = "<group>"; };
+		D47B84492628EBCF00812342 /* ConstantsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTable.swift; sourceTree = "<group>"; };
 		D49F84212627E46700C845A8 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 			children = (
 				D476DD372621E38B00600DD4 /* View */,
 				D476DD382621E39C00600DD4 /* ViewModel */,
+				D47B84482628EB7700812342 /* Helper */,
 				D476DD062621E2BF00600DD4 /* ACMEMobileBrowserApp.swift */,
 				D476DD0A2621E2C200600DD4 /* Assets.xcassets */,
 				D476DD0F2621E2C200600DD4 /* Info.plist */,
@@ -162,6 +165,14 @@
 				D476DD442622F0B300600DD4 /* MobileWebViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D47B84482628EB7700812342 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D47B84492628EBCF00812342 /* ConstantsTable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 				D47B8441262874CA00812342 /* ThumbnailsView.swift in Sources */,
 				D49F84222627E46700C845A8 /* BookmarkView.swift in Sources */,
 				D476DD6426242BFB00600DD4 /* EmbeddedWebViewController.swift in Sources */,
+				D47B844A2628EBCF00812342 /* ConstantsTable.swift in Sources */,
 				D476DD5926230B5100600DD4 /* WebView.swift in Sources */,
 				D476DD452622F0B300600DD4 /* MobileWebViewModel.swift in Sources */,
 				D476DD092621E2BF00600DD4 /* MobileWebView.swift in Sources */,

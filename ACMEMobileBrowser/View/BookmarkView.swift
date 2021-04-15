@@ -18,7 +18,7 @@ struct BookmarkView: View {
         NavigationView {
             List {
                 ForEach(self.viewModel.bookmarks, id: \.self) { bmark in
-                    NavigationLink(destination: MobileWebView(viewModel: viewModel, index: 2, bm: bmark)) {
+                    NavigationLink(destination: MobileWebView(viewModel: viewModel, index: ConstantsTable.Bookmarks, bm: bmark)) {
                         HStack {
                             Image(systemName: "bookmark")
                                 .foregroundColor(Color.blue)

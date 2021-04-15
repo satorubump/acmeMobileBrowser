@@ -10,9 +10,9 @@ import Combine
 
 struct MobileWebView : View {
     @ObservedObject var viewModel : MobileWebViewModel
-    var pindex = 0
+    var pindex = ConstantsTable.First
     @State var currentUrl : String = ""
-    @State var updateId : Int = 0
+    @State var updateId : Int = ConstantsTable.NoEvent
     @State var isBack : Bool = false
     @State var isForward : Bool = false
     @State var didFinishLoad : Bool = false
@@ -30,7 +30,7 @@ struct MobileWebView : View {
                 WebView(viewModel: viewModel, updateId: $updateId, isBack: $isBack, isForward: $isForward, didFinishLoad: $didFinishLoad, pindex: pindex)
                 Spacer()
             }
-            if didFinishLoad && pindex != 2 {
+            if didFinishLoad && pindex != ConstantsTable.Bookmarks {
                 VStack {
                     Spacer()
                     HStack {
@@ -57,27 +57,27 @@ struct MobileWebView : View {
         }
         .navigationBarItems(
             trailing:
-            HStack(spacing: 10) {
-                if pindex == 2 {
+            HStack(spacing: ConstantsTable.Spacing) {
+                if pindex == ConstantsTable.Bookmarks {
                     Image(systemName: "bookmark.fill")
                     .resizable()
-                    .frame(width:20)
-                        .aspectRatio(0.5, contentMode: .fit)
+                    .frame(width: ConstantsTable.SymbolFrameWidth)
+                        .aspectRatio(ConstantsTable.SymbolRatio, contentMode: .fit)
                         .foregroundColor(Color.pink)
                 }
-                else if pindex == 3 {
+                else if pindex == ConstantsTable.Thumbnails {
                     Image(systemName: "list.bullet")
                     .resizable()
-                    .frame(width:20)
-                        .aspectRatio(0.5, contentMode: .fit)
+                    .frame(width: ConstantsTable.SymbolFrameWidth)
+                        .aspectRatio(ConstantsTable.SymbolRatio, contentMode: .fit)
                         .foregroundColor(Color.pink)
                 }
             }
         )
         .onAppear() {
-            if self.pindex == 2 || self.pindex == 3 {
+            if self.pindex == ConstantsTable.Bookmarks || self.pindex == ConstantsTable.Thumbnails {
                 print("onAppear: \(bmurl)")
-                self.updateId = 4
+                self.updateId = ConstantsTable.URLGo
                 viewModel.urls[pindex] = bmurl
             }
         }
@@ -87,11 +87,11 @@ struct MobileWebView : View {
 extension MobileWebView {
     var urlSection : some View {
         Section {
-            HStack(spacing: 15) {
+            HStack(spacing: ConstantsTable.ButtonSpacing) {
                 if isBack {
                     Image(systemName: "chevron.backward")
                     .onTapGesture {
-                        updateId = 1
+                        updateId = ConstantsTable.Back
                     }
                 }
                 else {
@@ -101,7 +101,7 @@ extension MobileWebView {
                 if isForward {
                     Image(systemName: "chevron.forward")
                     .onTapGesture {
-                        updateId = 2
+                        updateId = ConstantsTable.Forward
                     }
                 }
                 else {
@@ -110,11 +110,11 @@ extension MobileWebView {
                 }
                 Image(systemName: "arrow.clockwise")
                     .onTapGesture {
-                        updateId = 3
+                        updateId = ConstantsTable.Reload
                     }
 
                 TextField("e.g. url", text: $currentUrl, onCommit: {
-                    updateId = 4
+                    updateId = ConstantsTable.URLGo
                     viewModel.urls[pindex] = currentUrl
                 })
                 .onReceive(Just($currentUrl)) { _ in
@@ -123,8 +123,8 @@ extension MobileWebView {
                 .keyboardType(.webSearch)
                 .autocapitalization(.none)
                 .modifier(ClearButton(text: $currentUrl))
-                .position(x: 150, y: 30)
-                .frame(width: 300, height: 50)
+                .position(x: ConstantsTable.URLFieldX, y: ConstantsTable.URLFieldY)
+                .frame(width: ConstantsTable.URLFieldWidth, height: ConstantsTable.URLFieldHeight)
             }
             .padding(.leading)
         }
@@ -133,7 +133,7 @@ extension MobileWebView {
 
 struct MobileWebView_Previews: PreviewProvider {
     static var previews: some View {
-        MobileWebView(viewModel: MobileWebViewModel(), index: 1)
+        MobileWebView(viewModel: MobileWebViewModel(), index: ConstantsTable.First)
     }
 }
 

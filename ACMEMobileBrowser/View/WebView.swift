@@ -25,18 +25,17 @@ struct WebView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: EmbeddedWebviewController, context: Context) {
         
         switch(updateId) {
-        case 1:
+        case ConstantsTable.Back:
             uiViewController.goBack()
-        case 2:
+        case ConstantsTable.Forward:
             uiViewController.goForward()
-        case 3:
+        case ConstantsTable.Reload:
             uiViewController.reload()
-        case 4:
+        case ConstantsTable.URLGo:
             uiViewController.loadUrl(viewModel.urls[pindex])
         default:
             print("updateUIView default")
         }
-        updateId = 0
     }
 
     func makeCoordinator() -> WebView.Coordinator {
@@ -65,17 +64,18 @@ struct WebView: UIViewControllerRepresentable {
             parent.isForward = webView.canGoForward
             parent.didFinishLoad = true
 
-            if parent.pindex == 3 {
+            if parent.pindex == ConstantsTable.Thumbnails {
                 return
             }
             if let sshot = webView.takeScreenShot() {
-                print("Coordinator didFinish \(sshot)")
+                //print("Coordinator didFinish \(sshot)")
                 parent.viewModel.updateHistory(index: parent.pindex, shot: sshot)
             }
+            parent.updateId = ConstantsTable.NoEvent
         }
 
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-            print("didfaileProvisionalNavigation error")
+            //print("didfaileProvisionalNavigation error")
             
             var surl = parent.viewModel.urls[parent.pindex]
             print("surl: \(surl)")
@@ -84,7 +84,6 @@ struct WebView: UIViewControllerRepresentable {
                 surl = surl.prefix(7) + "www" + surl.suffix(l - 10)
             }
             parent.viewModel.urls[parent.pindex] = surl
-
         }
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
             print("didFail")
