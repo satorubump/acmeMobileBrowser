@@ -29,8 +29,8 @@ class EmbeddedWebviewController: UIViewController {
         guard var surl = url else {
             return
         }
-        if surl.prefix(4) != "http" {
-            surl = "http://" + surl
+        if surl.prefix(5) != "https" {
+            surl = "https://" + surl
         }
         guard let url = URL(string: surl) else {   print("loadUrl error"); return  }
         print("loadUrl: \(url.absoluteString)")
@@ -52,7 +52,7 @@ class EmbeddedWebviewController: UIViewController {
     public func canGoForward() -> Bool {
         return webview.canGoForward
     }
-
+    
     override func loadView() {
         self.webview.navigationDelegate = self.delegate
         self.webview.uiDelegate = self.delegate

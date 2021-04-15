@@ -15,12 +15,17 @@ struct AppTabView: View {
             MobileWebView(viewModel: viewModel, index: 0)
             .tabItem {
                 Image(systemName: "network")
-                Text("first")
+                Text("First")
             }
             MobileWebView(viewModel: viewModel, index: 1)
             .tabItem {
                 Image(systemName: "network")
-                Text("second")
+                Text("Second")
+            }
+            BookmarkView(viewModel: viewModel)
+            .tabItem {
+                Image(systemName: "bookmark")
+                Text("Bookmark")
             }
         }
     }

@@ -13,16 +13,66 @@ struct MobileWebView : View {
     var pindex = 0
     @State var currentUrl : String = ""
     @State var updateId : Int = 0
+    @State var isBack : Bool = false
+    @State var isForward : Bool = false
+    @State var didFinishLoad : Bool = false
+    var bmurl = ""
     
-    init(viewModel: MobileWebViewModel, index: Int) {
+    init(viewModel: MobileWebViewModel, index: Int, bm: String = "") {
         self.viewModel = viewModel
         self.pindex = index
+        self.bmurl = bm
     }
     var body: some View {
-        VStack {
-            urlSection
-            WebView(viewModel: viewModel, updateId: $updateId, pindex: pindex)
-            Spacer()
+        ZStack {
+            VStack {
+                urlSection
+                WebView(viewModel: viewModel, updateId: $updateId, isBack: $isBack, isForward: $isForward, didFinishLoad: $didFinishLoad, pindex: pindex)
+                Spacer()
+            }
+            if didFinishLoad && pindex != 2 {
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        if viewModel.hasBookmark(index: pindex) == false {
+                            HStack {
+                                Text("add bookmark")
+                                .foregroundColor(Color.pink)
+                                Image(systemName:"bookmark.fill")
+                                .foregroundColor(Color.gray)
+                            }
+                            .onTapGesture {
+                                viewModel.addBookmark(index: pindex)
+                            }
+                        }
+                        else {
+                            Image(systemName:"bookmark.fill")
+                            .foregroundColor(Color.red)
+                        }
+                    }
+                    .padding()
+                }
+            }
+        }
+        .navigationBarItems(
+            trailing:
+            HStack(spacing: 10) {
+                if pindex == 2 {
+                    Image(systemName: "bookmark.fill")
+                    .resizable()
+                    .frame(width:20)
+                        .aspectRatio(0.5, contentMode: .fit)
+                        .foregroundColor(Color.pink)
+                }
+            }
+        )
+        .onAppear() {
+            if self.pindex == 2 {
+                print("onAppear: \(bmurl)")
+                self.updateId = 4
+                viewModel.urls[pindex] = bmurl
+            }
         }
     }
 }
@@ -31,14 +81,26 @@ extension MobileWebView {
     var urlSection : some View {
         Section {
             HStack(spacing: 15) {
-                Image(systemName: "chevron.backward")
+                if isBack {
+                    Image(systemName: "chevron.backward")
                     .onTapGesture {
                         updateId = 1
                     }
-                Image(systemName: "chevron.forward")
+                }
+                else {
+                    Image(systemName: "chevron.backward")
+                        .foregroundColor(Color.gray)
+                }
+                if isForward {
+                    Image(systemName: "chevron.forward")
                     .onTapGesture {
                         updateId = 2
                     }
+                }
+                else {
+                    Image(systemName: "chevron.forward")
+                        .foregroundColor(Color.gray)
+                }
                 Image(systemName: "arrow.clockwise")
                     .onTapGesture {
                         updateId = 3

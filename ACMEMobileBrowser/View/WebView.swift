@@ -12,6 +12,9 @@ import WebKit
 struct WebView: UIViewControllerRepresentable {
     var viewModel : MobileWebViewModel
     @Binding var updateId: Int
+    @Binding var isBack : Bool
+    @Binding var isForward : Bool
+    @Binding var didFinishLoad : Bool
     let pindex : Int
 
     func makeUIViewController(context: Context) -> EmbeddedWebviewController {
@@ -59,6 +62,13 @@ struct WebView: UIViewControllerRepresentable {
             if let surl = url?.absoluteString {
                 parent.viewModel.urls[parent.pindex] = surl
             }
+            parent.isBack = webView.canGoBack
+            parent.isForward = webView.canGoForward
+            parent.didFinishLoad = true
+            
+            if let sshot = webView.takeScreenShot() {
+                parent.viewModel.updateHistory(index: parent.pindex, shot: sshot)
+            }
         }
 
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
@@ -74,8 +84,7 @@ struct WebView: UIViewControllerRepresentable {
 
         }
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-            print("error")
-            //print(error)
+            print("didFail")
         }
     }
 }
@@ -91,5 +100,21 @@ struct WebView_Previews: PreviewProvider {
     static func makeURLRequest() -> URLRequest {
         let request = URLRequest(url: URL(string: "https://www.google.com")!)
         return request
+    }
+}
+
+extension WKWebView {
+    public func takeScreenShot() -> UIImage? {
+        let width = CGFloat(UIScreen.main.bounds.size.width)
+        
+        let height = CGFloat(UIScreen.main.bounds.size.height/1.3)
+        let size = CGSize(width: width, height: height)
+
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        let screenShotImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return screenShotImage
     }
 }
