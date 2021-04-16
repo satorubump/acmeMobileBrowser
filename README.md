@@ -6,14 +6,14 @@
 ![Neeva](images/Neeva.png "Web Browsing")
 
 ### Multiple pages on tab view
-![Nasa](images/nasa.png "Tab Bar")
+![Nasa](images/Nasa.png "Tab Bar")
 
 ### Bookmark function
 - bookmarks pages and display the list.
-![Nasa](images/bookmarks.png "Bookmark")
+![Nasa](images/Bookmarks.png "Bookmark")
 
 ### History function with Thumbnails
-![Nasa](images/history.png "History list with thumbnails")
+![Nasa](images/History.png "History list with thumbnails")
 - Remaining user browsing history and display the list with thumbnails.
 
 ## Implementation
