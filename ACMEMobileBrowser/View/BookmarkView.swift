@@ -30,14 +30,14 @@ struct BookmarkView: View {
             }
             .navigationBarItems(
                 leading:
-                HStack(spacing: 10) {
+                    HStack(spacing: ConstantsTable.Spacing) {
                         Image(systemName: "bookmark")
                         .resizable()
-                        .frame(width:20)
-                            .aspectRatio(0.75, contentMode: .fit)
+                            .frame(width: ConstantsTable.SymbolFrameWidth)
+                            .aspectRatio(ConstantsTable.SymbolRatio, contentMode: .fit)
                             .foregroundColor(Color.pink)
-                        Text("Bookmark")
-                        .font(.system(size: 25))
+                        Text("Bookmarks")
+                            .font(.system(size: ConstantsTable.NavibarFontSize))
                 }
             )
         }

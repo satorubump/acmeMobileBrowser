@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Tab Controller View
 struct AppTabView: View {
     @ObservedObject var viewModel = MobileWebViewModel()
     @State var currentView = ConstantsTable.First

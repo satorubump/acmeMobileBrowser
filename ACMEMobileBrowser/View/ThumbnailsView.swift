@@ -18,14 +18,14 @@ struct ThumbnailsView: View {
         NavigationView {
             VStack {
             List {
-                ForEach(self.viewModel.history, id: \.self) { hist in
+                ForEach(self.viewModel.histories, id: \.self) { hist in
                     
                     HStack {
                         NavigationLink(destination: MobileWebView(viewModel: viewModel, index: ConstantsTable.Thumbnails, bm: hist.url)) {
                             Image(uiImage: hist.shot)
                                 .resizable()
-                                .frame(height: 80)
-                                .aspectRatio(0.75, contentMode: .fit)
+                                .frame(height: ConstantsTable.FrameHeight)
+                                .aspectRatio(ConstantsTable.SymbolRatio, contentMode: .fit)
                             Text(hist.url)
                         }
                     }
@@ -33,14 +33,14 @@ struct ThumbnailsView: View {
             }
             .navigationBarItems(
                 leading:
-                HStack(spacing: 10) {
+                    HStack(spacing: ConstantsTable.Spacing) {
                         Image(systemName: "list.bullet")
                         .resizable()
-                        .frame(width:20)
-                            .aspectRatio(0.75, contentMode: .fit)
+                            .frame(width: ConstantsTable.SymbolFrameWidth)
+                            .aspectRatio(ConstantsTable.SymbolRatio, contentMode: .fit)
                             .foregroundColor(Color.pink)
                         Text("History")
-                        .font(.system(size: 25))
+                            .font(.system(size: ConstantsTable.NavibarFontSize))
                 }
             )
         }.onAppear() {

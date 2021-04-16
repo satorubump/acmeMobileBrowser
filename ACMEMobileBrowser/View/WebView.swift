@@ -9,8 +9,8 @@ import SwiftUI
 import WebKit
 
 
-struct WebView: UIViewControllerRepresentable {
-    var viewModel : MobileWebViewModel
+struct WebViewControllerRepresentable: UIViewControllerRepresentable {
+    weak var viewModel : MobileWebViewModel?
     @Binding var updateId: Int
     @Binding var isBack : Bool
     @Binding var isForward : Bool
@@ -32,20 +32,21 @@ struct WebView: UIViewControllerRepresentable {
         case ConstantsTable.Reload:
             uiViewController.reload()
         case ConstantsTable.URLGo:
-            uiViewController.loadUrl(viewModel.urls[pindex])
+            uiViewController.loadUrl(viewModel!.urls[pindex])
+            print("updateUIViewController")
         default:
             print("updateUIView default")
         }
     }
 
-    func makeCoordinator() -> WebView.Coordinator {
+    func makeCoordinator() -> WebViewControllerRepresentable.Coordinator {
         return Coordinator(self)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
-        var parent : WebView
+        var parent : WebViewControllerRepresentable
         
-        init(_ parent: WebView) {
+        init(_ parent: WebViewControllerRepresentable) {
              self.parent = parent
         }
         
@@ -58,18 +59,18 @@ struct WebView: UIViewControllerRepresentable {
             UIApplication.shared.closeKeyboard()
             let url = webView.url
             if let surl = url?.absoluteString {
-                parent.viewModel.urls[parent.pindex] = surl
+                parent.viewModel!.urls[parent.pindex] = surl
             }
             parent.isBack = webView.canGoBack
             parent.isForward = webView.canGoForward
             parent.didFinishLoad = true
 
-            if parent.pindex == ConstantsTable.Thumbnails {
+            if parent.pindex == ConstantsTable.Thumbnails || parent.pindex == ConstantsTable.Bookmarks {
                 return
             }
             if let sshot = webView.takeScreenShot() {
                 //print("Coordinator didFinish \(sshot)")
-                parent.viewModel.updateHistory(index: parent.pindex, shot: sshot)
+                parent.viewModel!.updateHistory(index: parent.pindex, shot: sshot)
             }
             parent.updateId = ConstantsTable.NoEvent
         }
@@ -77,13 +78,14 @@ struct WebView: UIViewControllerRepresentable {
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
             //print("didfaileProvisionalNavigation error")
             
-            var surl = parent.viewModel.urls[parent.pindex]
+            var surl = parent.viewModel!.urls[parent.pindex]
             print("surl: \(surl)")
             let l = surl.count
             if l > 11 && surl.prefix(10) != "http://www" {
                 surl = surl.prefix(7) + "www" + surl.suffix(l - 10)
             }
-            parent.viewModel.urls[parent.pindex] = surl
+            parent.updateId = ConstantsTable.NoEvent
+            parent.viewModel!.urls[parent.pindex] = surl
         }
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
             print("didFail")

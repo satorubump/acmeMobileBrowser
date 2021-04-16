@@ -27,6 +27,9 @@ struct ConstantsTable {
     static let URLFieldHeight : CGFloat = 50.0
     
     static let SymbolFrameWidth : CGFloat = 20.0
+    static let FrameHeight : CGFloat = 80.0
+
     static let SymbolRatio : CGFloat = 0.75
+    static let NavibarFontSize : CGFloat = 25.0
 
 }

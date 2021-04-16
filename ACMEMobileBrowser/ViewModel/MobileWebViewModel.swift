@@ -8,22 +8,21 @@
 import Foundation
 import UIKit
 
+// Observale View Model for all views
 class MobileWebViewModel : ObservableObject {
     @Published var urls = ["","","",""]
     @Published var bookmarks : [String] = [String]()
     @Published var updateFlag = false
-    @Published var history = [History]()
+    @Published var histories = [History]()
     
     init() {
-        print("viewModel init")
         guard let historyUrls = UserDefaults.standard.array(forKey: "historyUrls") as? [String] else { print("urls"); return }
         guard let historyImages = UserDefaults.standard.array(forKey: "historyImages") as? [Data] else { print("images"); return }
         for i in 0..<historyUrls.count {
             let image = UIImage(data: historyImages[i])
             let history = History(url: historyUrls[i], shot: image!)
-            self.history.append(history)
+            self.histories.append(history)
         }
-        print("viewModel init 2")
     }
     
     func hasBookmark(index: Int) -> Bool {
@@ -32,7 +31,6 @@ class MobileWebViewModel : ObservableObject {
         return burls.contains(self.urls[index])
     }
     func addBookmark(index: Int) -> Void {
-        print("addBookmark 1")
         var bkurls : [String]
         if let bookmarks = UserDefaults.standard.array(forKey: "bookmarks") as? [String] {
             bkurls = bookmarks
@@ -44,7 +42,6 @@ class MobileWebViewModel : ObservableObject {
         }
         UserDefaults.standard.set(bkurls, forKey: "bookmarks")
         self.updateFlag.toggle()
-        print("addBookmark 2")
     }
     func updateBookmarkList() {
         bookmarks.removeAll()
@@ -55,11 +52,10 @@ class MobileWebViewModel : ObservableObject {
         }
     }
     func updateHistory(index: Int, shot: UIImage) {
-        print("updateHistory 1")
         let url = self.urls[index]
         var index : Int?
         var i = 0
-        for hist in self.history {
+        for hist in self.histories {
             if hist.url == url {
                 index = i
                 break
@@ -67,37 +63,28 @@ class MobileWebViewModel : ObservableObject {
             i += 1
         }
         if let ind = index {
-            print("updateHistory index \(shot)")
-            let hist = self.history[ind]
-            self.history.remove(at: ind)
-            self.history.insert(hist, at: 0)
+            let hist = self.histories[ind]
+            self.histories.remove(at: ind)
+            self.histories.insert(hist, at: 0)
         }
         else {
-            print("updateHistory else \(shot)")
-
             let hist = History(url: url, shot: shot)
-            self.history.insert(hist, at: 0)
+            self.histories.insert(hist, at: 0)
         }
         self.saveHistory()
-        print("updateHistory 2 \(self.history.count)")
     }
     
     private func saveHistory() {
-        print("saveHistory 1")
         var urls = [String]()
         var images = [Data]()
-        self.history.forEach { hist in
+        self.histories.forEach { hist in
             urls.append(hist.url)
             images.append(hist.shot.jpegData(compressionQuality: 1)!)
             print(images)
         }
         UserDefaults.standard.set(urls, forKey: "historyUrls")
         UserDefaults.standard.set(images, forKey: "historyImages")
-        print("saveHistory 2")
     }
 }
 
-struct History : Hashable {
-    let url : String
-    let shot : UIImage
-}
+

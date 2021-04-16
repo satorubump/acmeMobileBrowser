@@ -20,6 +20,7 @@
 		D47B8441262874CA00812342 /* ThumbnailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B8440262874CA00812342 /* ThumbnailsView.swift */; };
 		D47B844A2628EBCF00812342 /* ConstantsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B84492628EBCF00812342 /* ConstantsTable.swift */; };
 		D49F84222627E46700C845A8 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49F84212627E46700C845A8 /* BookmarkView.swift */; };
+		D4C61B122629830C0015BB14 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C61B112629830C0015BB14 /* HistoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D47B8440262874CA00812342 /* ThumbnailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailsView.swift; sourceTree = "<group>"; };
 		D47B84492628EBCF00812342 /* ConstantsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTable.swift; sourceTree = "<group>"; };
 		D49F84212627E46700C845A8 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
+		D4C61B112629830C0015BB14 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				D476DD442622F0B300600DD4 /* MobileWebViewModel.swift */,
+				D4C61B112629830C0015BB14 /* HistoryModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				D476DD6426242BFB00600DD4 /* EmbeddedWebViewController.swift in Sources */,
 				D47B844A2628EBCF00812342 /* ConstantsTable.swift in Sources */,
 				D476DD5926230B5100600DD4 /* WebView.swift in Sources */,
+				D4C61B122629830C0015BB14 /* HistoryModel.swift in Sources */,
 				D476DD452622F0B300600DD4 /* MobileWebViewModel.swift in Sources */,
 				D476DD092621E2BF00600DD4 /* MobileWebView.swift in Sources */,
 				D476DD072621E2BF00600DD4 /* ACMEMobileBrowserApp.swift in Sources */,

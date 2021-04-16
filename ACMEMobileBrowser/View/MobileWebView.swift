@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 
+// Web Main View
 struct MobileWebView : View {
     @ObservedObject var viewModel : MobileWebViewModel
     var pindex = ConstantsTable.First
@@ -27,7 +28,7 @@ struct MobileWebView : View {
         ZStack {
             VStack {
                 urlSection
-                WebView(viewModel: viewModel, updateId: $updateId, isBack: $isBack, isForward: $isForward, didFinishLoad: $didFinishLoad, pindex: pindex)
+                WebViewControllerRepresentable(viewModel: viewModel, updateId: $updateId, isBack: $isBack, isForward: $isForward, didFinishLoad: $didFinishLoad, pindex: pindex)
                 Spacer()
             }
             if didFinishLoad && pindex != ConstantsTable.Bookmarks {
@@ -62,7 +63,7 @@ struct MobileWebView : View {
                     Image(systemName: "bookmark.fill")
                     .resizable()
                     .frame(width: ConstantsTable.SymbolFrameWidth)
-                        .aspectRatio(ConstantsTable.SymbolRatio, contentMode: .fit)
+                        .aspectRatio(ConstantsTable.SymbolRatio, contentMode: .fill)
                         .foregroundColor(Color.pink)
                 }
                 else if pindex == ConstantsTable.Thumbnails {
@@ -113,7 +114,8 @@ extension MobileWebView {
                         updateId = ConstantsTable.Reload
                     }
 
-                TextField("e.g. url", text: $currentUrl, onCommit: {
+                TextField("type a URL", text: $currentUrl, onCommit: {
+                    print("URLGo")
                     updateId = ConstantsTable.URLGo
                     viewModel.urls[pindex] = currentUrl
                 })
