@@ -1,5 +1,5 @@
 //
-//  ThumbnailsView.swift
+//  ThumbnailHistoryView.swift
 //  ACMEMobileBrowser
 //
 //  Created by Satoru Ishii on 4/15/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ThumbnailsView: View {
+struct ThumbnailHistoryView: View {
     @ObservedObject var viewModel : MobileWebViewModel
 
     init(viewModel: MobileWebViewModel) {
@@ -49,8 +49,8 @@ struct ThumbnailsView: View {
     }
 }
 
-struct ThumbnailsView_Previews: PreviewProvider {
+struct ThumbnailHistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ThumbnailsView(viewModel: MobileWebViewModel())
+        ThumbnailHistoryView(viewModel: MobileWebViewModel())
     }
 }

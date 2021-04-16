@@ -15,9 +15,9 @@
 		D476DD242621E2C200600DD4 /* ACMEMobileBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD232621E2C200600DD4 /* ACMEMobileBrowserUITests.swift */; };
 		D476DD3A2622AE6800600DD4 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD392622AE6800600DD4 /* AppTabView.swift */; };
 		D476DD452622F0B300600DD4 /* MobileWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD442622F0B300600DD4 /* MobileWebViewModel.swift */; };
-		D476DD5926230B5100600DD4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD5826230B5100600DD4 /* WebView.swift */; };
+		D476DD5926230B5100600DD4 /* WebVCRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD5826230B5100600DD4 /* WebVCRepresentable.swift */; };
 		D476DD6426242BFB00600DD4 /* EmbeddedWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476DD6326242BFB00600DD4 /* EmbeddedWebViewController.swift */; };
-		D47B8441262874CA00812342 /* ThumbnailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B8440262874CA00812342 /* ThumbnailsView.swift */; };
+		D47B8441262874CA00812342 /* ThumbnailHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B8440262874CA00812342 /* ThumbnailHistoryView.swift */; };
 		D47B844A2628EBCF00812342 /* ConstantsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B84492628EBCF00812342 /* ConstantsTable.swift */; };
 		D49F84222627E46700C845A8 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49F84212627E46700C845A8 /* BookmarkView.swift */; };
 		D4C61B122629830C0015BB14 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C61B112629830C0015BB14 /* HistoryModel.swift */; };
@@ -55,9 +55,9 @@
 		D476DD252621E2C200600DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D476DD392622AE6800600DD4 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		D476DD442622F0B300600DD4 /* MobileWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileWebViewModel.swift; sourceTree = "<group>"; };
-		D476DD5826230B5100600DD4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		D476DD5826230B5100600DD4 /* WebVCRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVCRepresentable.swift; sourceTree = "<group>"; };
 		D476DD6326242BFB00600DD4 /* EmbeddedWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedWebViewController.swift; sourceTree = "<group>"; };
-		D47B8440262874CA00812342 /* ThumbnailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailsView.swift; sourceTree = "<group>"; };
+		D47B8440262874CA00812342 /* ThumbnailHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailHistoryView.swift; sourceTree = "<group>"; };
 		D47B84492628EBCF00812342 /* ConstantsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTable.swift; sourceTree = "<group>"; };
 		D49F84212627E46700C845A8 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		D4C61B112629830C0015BB14 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
@@ -153,10 +153,10 @@
 			children = (
 				D476DD392622AE6800600DD4 /* AppTabView.swift */,
 				D476DD082621E2BF00600DD4 /* MobileWebView.swift */,
-				D476DD5826230B5100600DD4 /* WebView.swift */,
+				D476DD5826230B5100600DD4 /* WebVCRepresentable.swift */,
 				D476DD6326242BFB00600DD4 /* EmbeddedWebViewController.swift */,
 				D49F84212627E46700C845A8 /* BookmarkView.swift */,
-				D47B8440262874CA00812342 /* ThumbnailsView.swift */,
+				D47B8440262874CA00812342 /* ThumbnailHistoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,11 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D476DD3A2622AE6800600DD4 /* AppTabView.swift in Sources */,
-				D47B8441262874CA00812342 /* ThumbnailsView.swift in Sources */,
+				D47B8441262874CA00812342 /* ThumbnailHistoryView.swift in Sources */,
 				D49F84222627E46700C845A8 /* BookmarkView.swift in Sources */,
 				D476DD6426242BFB00600DD4 /* EmbeddedWebViewController.swift in Sources */,
 				D47B844A2628EBCF00812342 /* ConstantsTable.swift in Sources */,
-				D476DD5926230B5100600DD4 /* WebView.swift in Sources */,
+				D476DD5926230B5100600DD4 /* WebVCRepresentable.swift in Sources */,
 				D4C61B122629830C0015BB14 /* HistoryModel.swift in Sources */,
 				D476DD452622F0B300600DD4 /* MobileWebViewModel.swift in Sources */,
 				D476DD092621E2BF00600DD4 /* MobileWebView.swift in Sources */,

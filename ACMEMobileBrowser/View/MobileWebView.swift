@@ -28,7 +28,7 @@ struct MobileWebView : View {
         ZStack {
             VStack {
                 urlSection
-                WebViewControllerRepresentable(viewModel: viewModel, updateId: $updateId, isBack: $isBack, isForward: $isForward, didFinishLoad: $didFinishLoad, pindex: pindex)
+                WebVCRepresentable(viewModel: viewModel, updateId: $updateId, isBack: $isBack, isForward: $isForward, didFinishLoad: $didFinishLoad, pindex: pindex)
                 Spacer()
             }
             if didFinishLoad && pindex != ConstantsTable.Bookmarks {

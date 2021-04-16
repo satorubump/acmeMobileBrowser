@@ -11,9 +11,9 @@ class EmbeddedWebviewController: UIViewController {
 
     var webview: WKWebView
 
-    public var delegate: WebViewControllerRepresentable.Coordinator? = nil
+    public var delegate: WebVCRepresentable.Coordinator? = nil
 
-    init(coordinator: WebViewControllerRepresentable.Coordinator) {
+    init(coordinator: WebVCRepresentable.Coordinator) {
         self.delegate = coordinator
         self.webview = WKWebView()
         super.init(nibName: nil, bundle: nil)

@@ -28,7 +28,7 @@ struct AppTabView: View {
                 Image(systemName: "bookmark")
                 Text("Bookmarks")
             }
-            ThumbnailsView(viewModel: viewModel)
+            ThumbnailHistoryView(viewModel: viewModel)
             .tabItem {
                 Image(systemName: "list.bullet")
                 Text("Thumbnails")

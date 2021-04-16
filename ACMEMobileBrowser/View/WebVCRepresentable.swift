@@ -9,7 +9,7 @@ import SwiftUI
 import WebKit
 
 
-struct WebViewControllerRepresentable: UIViewControllerRepresentable {
+struct WebVCRepresentable: UIViewControllerRepresentable {
     weak var viewModel : MobileWebViewModel?
     @Binding var updateId: Int
     @Binding var isBack : Bool
@@ -39,14 +39,14 @@ struct WebViewControllerRepresentable: UIViewControllerRepresentable {
         }
     }
 
-    func makeCoordinator() -> WebViewControllerRepresentable.Coordinator {
+    func makeCoordinator() -> WebVCRepresentable.Coordinator {
         return Coordinator(self)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
-        var parent : WebViewControllerRepresentable
+        var parent : WebVCRepresentable
         
-        init(_ parent: WebViewControllerRepresentable) {
+        init(_ parent: WebVCRepresentable) {
              self.parent = parent
         }
         
