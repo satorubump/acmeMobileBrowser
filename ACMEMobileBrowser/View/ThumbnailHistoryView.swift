@@ -46,8 +46,6 @@ struct ThumbnailHistoryView: View {
                             .font(.system(size: ConstantsTable.NavibarFontSize))
                 }
             )
-        }.onAppear() {
-            print("onAppear")
         }
     }
 }

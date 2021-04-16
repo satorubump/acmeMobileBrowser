@@ -35,7 +35,6 @@ struct WebVCRepresentable: UIViewControllerRepresentable {
             uiViewController.reload()
         case ConstantsTable.URLGo:
             uiViewController.loadUrl(viewModel!.urls[pindex])
-            print("updateUIViewController")
         default:
             print("updateUIView default")
         }
@@ -53,11 +52,9 @@ struct WebVCRepresentable: UIViewControllerRepresentable {
         }
         
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-            print("load started")
         }
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            print("load finished \(webView.url!))")
             UIApplication.shared.closeKeyboard()
             let url = webView.url
             if let surl = url?.absoluteString {
@@ -71,7 +68,6 @@ struct WebVCRepresentable: UIViewControllerRepresentable {
                 return
             }
             if let sshot = webView.takeScreenShot() {
-                //print("Coordinator didFinish \(sshot)")
                 parent.viewModel!.updateHistory(index: parent.pindex, shot: sshot)
             }
             parent.updateId = ConstantsTable.NoEvent
@@ -90,7 +86,7 @@ struct WebVCRepresentable: UIViewControllerRepresentable {
             parent.viewModel!.urls[parent.pindex] = surl
         }
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-            print("didFail")
+
         }
     }
 }
@@ -104,7 +100,7 @@ struct WebView_Previews: PreviewProvider {
     }
 
     static func makeURLRequest() -> URLRequest {
-        let request = URLRequest(url: URL(string: "https://www.google.com")!)
+        let request = URLRequest(url: URL(string: "https://www.neeva.co")!)
         return request
     }
 }
@@ -112,7 +108,6 @@ struct WebView_Previews: PreviewProvider {
 extension WKWebView {
     public func takeScreenShot() -> UIImage? {
         
-        print("takeScreenShot 1")
         let width = CGFloat(UIScreen.main.bounds.size.width)
         
         let height = CGFloat(UIScreen.main.bounds.size.height/1.3)
@@ -123,7 +118,6 @@ extension WKWebView {
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
         let screenShotImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        print("takeScreenShot 2")
 
         return screenShotImage
     }
