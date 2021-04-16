@@ -8,7 +8,9 @@
 import SwiftUI
 import Combine
 
-// Web Main View
+/*
+ *  Browser Main View
+ */
 struct MobileWebView : View {
     @ObservedObject var viewModel : MobileWebViewModel
     var pindex = ConstantsTable.First

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/*
+ *  Display bookmark url list
+ */
 struct BookmarkView: View {
     @ObservedObject var viewModel : MobileWebViewModel
 

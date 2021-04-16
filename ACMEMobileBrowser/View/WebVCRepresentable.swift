@@ -8,7 +8,9 @@
 import SwiftUI
 import WebKit
 
-
+/*
+ *  Interface for connect to WKWebView on UIKit Viewcontroller
+ */
 struct WebVCRepresentable: UIViewControllerRepresentable {
     weak var viewModel : MobileWebViewModel?
     @Binding var updateId: Int

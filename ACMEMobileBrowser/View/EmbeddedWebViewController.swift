@@ -7,6 +7,9 @@
 
 import WebKit
 
+/*
+ *  ViewController for WKWebView
+ */
 class EmbeddedWebviewController: UIViewController {
 
     var webview: WKWebView

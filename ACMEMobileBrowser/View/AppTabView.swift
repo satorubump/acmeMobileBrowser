@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-// Tab Controller View
+/*
+ *  Tab Controller Top View
+ */
 struct AppTabView: View {
     @ObservedObject var viewModel = MobileWebViewModel()
     @State var currentView = ConstantsTable.First
@@ -33,7 +35,6 @@ struct AppTabView: View {
                 Image(systemName: "list.bullet")
                 Text("Thumbnails")
             }
-
         }
     }
 }

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/*
+ *  Display user's browsing history list with thumbnails
+ */
 struct ThumbnailHistoryView: View {
     @ObservedObject var viewModel : MobileWebViewModel
 

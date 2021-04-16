@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-// Observale View Model for all views
+/*
+ *  Observale View Model for all views
+ */
 class MobileWebViewModel : ObservableObject {
     @Published var urls = ["","","",""]
     @Published var bookmarks : [String] = [String]()

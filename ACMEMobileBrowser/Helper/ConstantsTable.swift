@@ -7,6 +7,9 @@
 
 import UIKit
 
+/*
+ *  Constants Table
+ */
 struct ConstantsTable {
     static let First = 0
     static let Second = 1
